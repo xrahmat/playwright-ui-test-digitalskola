@@ -12,7 +12,7 @@ import { test } from './base/base-test';
     // await loginPage.inputPassword('secret_sauce')
     // await loginPage.clickLoginButton()
     
-    await loginPage.login('standard_user','secret_sauce')
+    await loginPage.login(process.env.STANDARD_USER,process.env.PASSWORD)
     await dashboardPage.validateOnPage()
 });
 
@@ -26,7 +26,7 @@ test('TC 2 - Successful login using page object - visual_user', async ({ loginPa
     // await loginPage.inputPassword('secret_sauce')
     // await loginPage.clickLoginButton()
     
-    await loginPage.login('visual_user','secret_sauce')
+    await loginPage.login(process.env.VISUAL_USER,process.env.PASSWORD)
     await dashboardPage.validateOnPage()
 });
 
