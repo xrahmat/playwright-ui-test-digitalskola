@@ -1,11 +1,11 @@
-import { test } from '@playwright/test';
-import { LoginPage } from './page-object/login-page';
-import { DashboardPage } from './page-object/dashbooard-page';
+import { test } from './base/base-test';
+// import { LoginPage } from './page-object/login-page';
+// import { DashboardPage } from './page-object/dashbooard-page';
 
-test('TC 1 - Successful login using page object', async ({ page }) => {
+ test('TC 1 - Successful login using page object - standard_user', async ({ loginPage, dashboardPage }) => {
 
-    const loginPage = new LoginPage(page)
-    const dashboardPage = new DashboardPage (page)
+    // const loginPage = new LoginPage(page)
+    // const dashboardPage = new DashboardPage (page)
 
     // await loginPage.navigate()
     // await loginPage.inputUsername('standard_user')
@@ -16,10 +16,10 @@ test('TC 1 - Successful login using page object', async ({ page }) => {
     await dashboardPage.validateOnPage()
 });
 
-test('TC 2 - Successful login using page object - vsiual_user', async ({ page }) => {
+test('TC 2 - Successful login using page object - visual_user', async ({ loginPage, dashboardPage }) => {
 
-    const loginPage = new LoginPage(page)
-    const dashboardPage = new DashboardPage (page)
+    // const loginPage = new LoginPage(page)
+    // const dashboardPage = new DashboardPage (page)
 
     // await loginPage.navigate()
     // await loginPage.inputUsername('visual_user')
