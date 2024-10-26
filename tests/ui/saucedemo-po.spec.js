@@ -2,7 +2,7 @@ import { test } from './base/base-test';
 // import { LoginPage } from './page-object/login-page';
 // import { DashboardPage } from './page-object/dashbooard-page';
 
- test('TC 1 - Successful login using page object - standard_user', async ({ loginPage, dashboardPage }) => {
+ test('TC 1 - Successful login using page object - standard_user', async ({ loginPage, dashboardPage, cartPage }) => {
 
     // const loginPage = new LoginPage(page)
     // const dashboardPage = new DashboardPage (page)
@@ -14,9 +14,13 @@ import { test } from './base/base-test';
     
     await loginPage.login(process.env.STANDARD_USER,process.env.PASSWORD)
     await dashboardPage.validateOnPage()
+    await dashboardPage.clickItem()
+    await dashboardPage.validateItemAddedToCart()
+    await cartPage.clickShoppingCart()
+    await cartPage.validateOnPage()
 });
 
-test('TC 2 - Successful login using page object - visual_user', async ({ loginPage, dashboardPage }) => {
+test('TC 2 - Successful login using page object - visual_user', async ({ loginPage, dashboardPage, cartPage }) => {
 
     // const loginPage = new LoginPage(page)
     // const dashboardPage = new DashboardPage (page)
@@ -28,5 +32,9 @@ test('TC 2 - Successful login using page object - visual_user', async ({ loginPa
     
     await loginPage.login(process.env.VISUAL_USER,process.env.PASSWORD)
     await dashboardPage.validateOnPage()
+    await dashboardPage.clickItem()
+    await dashboardPage.validateItemAddedToCart()
+    await cartPage.clickShoppingCart()
+    await cartPage.validateOnPage()
 });
 
