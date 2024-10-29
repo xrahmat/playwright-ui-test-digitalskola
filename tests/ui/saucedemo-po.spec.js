@@ -38,3 +38,15 @@ test('TC 2 - Successful login using page object - visual_user', async ({ loginPa
     await cartPage.validateOnPage()
 });
 
+test.afterEach(async ({ page }, testInfo) => {
+    if (testInfo.status !== testInfo.expectedStatus) {
+        console.log("Test failed, perform screenshot");
+        const image = await page.screenshot({fullPage: true})
+        testInfo.attach('failed test', {
+            body: image,
+            contentType: 'image/png',
+        });
+        
+    }
+});
+

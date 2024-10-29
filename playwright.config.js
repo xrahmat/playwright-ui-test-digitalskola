@@ -13,6 +13,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '.env') });
  */
 module.exports = defineConfig({
   testDir: './tests',
+  snapshotPathTemplate: 'tests/ui/snapshot/{arg}{ext}',
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -22,7 +23,7 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'list',
+  reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
