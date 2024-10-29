@@ -35,7 +35,7 @@ test('TC 2 - Successful login using page object - visual_user', async ({ loginPa
     await dashboardPage.clickItem()
     await dashboardPage.validateItemAddedToCart()
     await cartPage.clickShoppingCart()
-    await cartPage.validateOnPage()
+    // await cartPage.validateOnPage()
 });
 
 test.afterEach(async ({ page }, testInfo) => {

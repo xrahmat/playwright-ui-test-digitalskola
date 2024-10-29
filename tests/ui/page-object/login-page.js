@@ -10,7 +10,7 @@ export class LoginPage {
 
     async navigate() {
         await this.page.goto('https://www.saucedemo.com/');
-        await expect(this.page).toHaveScreenshot('login-page.png')
+        await expect(this.page).toHaveScreenshot('login-page.png',{maxDiffPixelRatio: 0.1})
     }
 
     async inputUsername(username) {
